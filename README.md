@@ -1,13 +1,48 @@
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=23053258)
-# CSSE6400 Week 3 Practical
+---
 
-Containerisation of our Todo application using Docker and Docker Compose.
+# Week 3 - Docker and PostgreSQL
 
-Please see the [instructions](https://csse6400.uqcloud.net/practicals/week03) for more details.
+## Overview
 
-Update this README file with appropriate information about your project,
-including how to run it.
+This week containerises the application using Docker and connects it to a PostgreSQL database using Docker Compose.
 
-There are [resources](https://www.makeareadme.com) available to help you write a good README file.
+---
+
+## Features
+
+- Dockerfile for Flask app  
+- Docker Compose setup  
+- PostgreSQL integration  
+- Environment-based database configuration  
+
+---
+
+## How to Run (Docker)
+
+```bash
+docker compose up --build
+## Test API
+
+```bash
+curl http://127.0.0.1:6400/api/v1/health
+```
+
+---
+
+## Example
+
+### Create a todo:
+
+```bash
+curl -X POST http://127.0.0.1:6400/api/v1/todos \
+  -H "Content-Type: application/json" \
+  -d '{"title":"week3 docker"}'
+```
+
+### Get todos:
+
+```bash
+curl http://127.0.0.1:6400/api/v1/todos
+```
 
 
